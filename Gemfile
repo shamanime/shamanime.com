@@ -21,6 +21,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'mongoid_slug'
 gem 'rdiscount'
+gem 'will_paginate'
 
 # Use unicorn as the web server
 # gem 'unicorn'

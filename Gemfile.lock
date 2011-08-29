@@ -126,6 +126,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.0.5)
       rack (>= 1.0)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
@@ -143,3 +144,4 @@ DEPENDENCIES
   rdiscount
   sass-rails (~> 3.1.0.rc)
   uglifier
+  will_paginate
