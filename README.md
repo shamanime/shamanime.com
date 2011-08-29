@@ -9,3 +9,12 @@ This is intended to be a simple blog system, I will add more features as I need 
 I am taking this as an opportunity to improve my coding skills and to share what I've learned with others.  
 Feel free to fork, edit and send me pull requests.  
 Also, do not hesitate to get in touch sending an e-mail to jefferson@shamanime.com.
+
+## Features
+* Manage users using [Devise](https://github.com/plataformatec/devise)
+* Static pages using the [high_voltage](https://github.com/thoughtbot/high_voltage) gem
+* Comments powered by [Disqus](http://disqus.com/)
+* Layout based on the [Twitter Boostrap](https://github.com/twitter/bootstrap)
+* Views using [haml-rails](https://github.com/indirect/haml-rails)
+* Simple view to manage posts
+* [rdiscount](https://github.com/rtomayko/rdiscount) to format posts using markdown
