@@ -22,6 +22,14 @@
             #content-top.top-with-divider
               .row
                 .span11.columns
+                  - if flash
+                    .alert-home
+                      - flash.each do |name, msg| 
+                        .alert-message{:class => name}
+                          = link_to "×", "#", :class => "close"
+                          %p
+                            %strong Hey!
+                            = msg
                   = yield
                 .span5.columns
                   .widget

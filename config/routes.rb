@@ -5,9 +5,14 @@ ShamanimeCom::Application.routes.draw do
     resources :users, :except => :show
     resources :posts, :except => :show
     root :to => 'posts#index'
+    
+    match '*a', :to => 'posts#index'
   end
+  
   post "/contact", :controller => :contact, :action => :contact
   get "/contact", :controller => :pages, :action => :contact
   resources :posts, :only => [:index, :show]
   root :to => 'posts#index'
+  
+  match '*a', :to => 'posts#index'
 end
