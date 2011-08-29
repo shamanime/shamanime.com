@@ -5,3 +5,7 @@
     %p= raw (truncate(post.markdown_body, :length => 600, :separator => ' '))
     %a{:href => post_url(post), :class => 'readmore'}
       %span= t('post.read_more')
+.row
+  .pagination
+    %ul
+      = will_paginate @posts, :container => false 
