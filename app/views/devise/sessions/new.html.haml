@@ -2,11 +2,11 @@
   .span8.columns.offset4
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       %fieldset
-        %legend Sign in
+        %legend= t 'devise.form.title'
         .clearfix
           = f.label :username
           .input= f.text_field :username
         .clearfix
           = f.label :password
           .input= f.password_field :password
-        .actions= f.submit "Sign in", :class => "btn primary"
+        .actions= f.submit t('devise.form.button'), :class => "btn primary"

@@ -9,19 +9,19 @@
     });
   
 .page.left
-  %h1.title Contact
+  %h1.title= t 'pages.contact.title'
   #note-ok{:style => "display:none"}
   #note-error{:style => "display:none"}
   #contact-form
     = form_for @contact, :url => { :controller => :pages, :action => :send_contact }, :remote => true do |f|
       .clearfix
-        = f.label 'Name*'
+        = f.label :name
         .input= f.text_field :name, :class => "xlarge"
       .clearfix
-        = f.label 'Email*'
+        = f.label :email
         .input= f.text_field :email, :class => "xlarge"
       .clearfix
-        = f.label 'Message*'
+        = f.label :message
         .input= f.text_area :message, :rows => 6, :class => "xlarge"
-      .actions= f.submit 'Send', :id => 'submit-button', :name => 'submit', :class => "btn primary"
+      .actions= f.submit t('pages.contact.send_button'), :id => 'submit-button', :name => 'submit', :class => "btn primary"
   #load

@@ -1,6 +1,5 @@
 #footer-bottom
   .container
     %ul#menu-pages.bottom-nav
-      %li= link_to 'Home', root_path
-      %li= link_to 'Contact', page_path("contact")
-    %p#copyright Developed using Ruby on Rails and Mongoid.
+      = render :partial => 'layouts/primary_nav_itens'
+    %p#copyright= t 'footer.copyright'

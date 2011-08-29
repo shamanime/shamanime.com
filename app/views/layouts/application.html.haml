@@ -20,13 +20,13 @@
                   = yield
                 .span5.columns
                   .widget
-                    %h4.widgettitle Recent Posts
+                    %h4.widgettitle= t 'sidebar.title.recent_posts'
                     - for post in @recent_posts
                       %ul
                         %li= link_to post.title, post_path(post)
                   .widget
                     #recentcomments.dsq-widget
-                      %h2.dsq-widget-title Recent Comments
+                      %h2.dsq-widget-title= t 'sidebar.title.recent_comments'
                       %script{:src => "http://shamanime.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200", :type => "text/javascript"}
     #footer
       #footer-content
@@ -38,7 +38,7 @@
                 .thumb
                   = image_tag "profile_min.png", :title => "Jefferson Queiroz Venerando", :class => "item-image"
                   %span.overlay
-                %p= t('footer.boxes.first.content')
+                %p= raw t('footer.boxes.first.content')
               .span5.columns.footer-widget
                 %h4.footertitle= t('footer.boxes.second.title')
                 %p= t('footer.boxes.second.content')

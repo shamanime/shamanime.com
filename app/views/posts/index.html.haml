@@ -1,7 +1,7 @@
 - for post in @posts
   .post
     %h2.title= link_to post.title, post
-    %p.meta-info= "Posted by #{post.user.username} in #{l post.created_at, :format => :long}."
+    %p.meta-info= t('post.meta_info', :author => post.user.username, :date => l(post.created_at, :format => :long))
     %p= raw (truncate(post.markdown_body, :length => 600, :separator => ' '))
     %a{:href => post_url(post), :class => 'readmore'}
       %span= t('post.read_more')

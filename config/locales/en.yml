@@ -209,20 +209,36 @@ en:
     title: 'Jefferson Queiroz Venerando'
     description: 'My personal awesome blog'
     keywords: 'jefferson, shamanime, queiroz, venerando, jefferson queiroz, jefferson venerando, shaman, rails, dev'
+  navigation:
+    home: 'Home'
+    contact: 'Contact'
+    admin:
+      manage_users: 'Manage Users'
+      manage_posts: 'Manage Posts'
+      logout: 'Logout'
   blog:
     name: 'Jefferson Queiroz Venerando'
     title: 'Awesome brand new blog'
   post:
     read_more: 'Read more'
+    meta_info: 'Posted by %{author} in %{date}.'
+  sidebar:
+    title:
+      recent_posts: 'Recent Posts'
+      recent_comments: 'Recent Comments'
   footer:
-    copyright:
+    copyright: 'Developed using Ruby on Rails and Mongoid.'
     boxes:
       first:
         title: 'About me'
-        content: 'Hello! My name is Jefferson Queiroz Venerando. I develop web applications using Ruby on Rails, HML5, CSS3 - and much love :)'
+        content: 'Hello! My name is Jefferson Queiroz Venerando. I develop web applications using Ruby on Rails, HML5, CSS3 - and <strong>much love</strong> :)'
       second:
         title: 'Presentations'
         content: "Check out what I've been saying:"
       third:
         title: 'Get in touch'
         content: 'This is where I live on the interwebs:'
+  pages:
+    contact:
+      title: 'Contact'
+      send_button: 'Send'
