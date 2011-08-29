@@ -22,6 +22,8 @@
         .input= f.text_field :email, :class => "xlarge"
       .clearfix
         = f.label :message
-        .input= f.text_area :message, :rows => 6, :class => "xlarge"
+        .input
+          = f.text_area :message, :rows => 6, :class => "xlarge"
+          %span.help-block Note: All fields are required.
       .actions= f.submit t('pages.contact.send_button'), :id => 'submit-button', :name => 'submit', :class => "btn primary"
   #load
