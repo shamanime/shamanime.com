@@ -222,6 +222,7 @@ en:
   post:
     read_more: 'Read more'
     meta_info: 'Posted by %{author} in %{date}.'
+    no_posts: 'There are no posts to display.'
   sidebar:
     title:
       recent_posts: 'Recent Posts'
