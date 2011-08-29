@@ -5,7 +5,7 @@
     :javascript
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
       var disqus_shortname = 'example'; // required: replace example with your forum shortname
-      // var disqus_developer = 1; // uncomment this in development
+      //var disqus_developer = 1; // uncomment this in development
     
     = yield :headjs
     = render :partial => 'layouts/top_bar'
@@ -30,7 +30,7 @@
                       %ul
                         %li
                           = link_to post.title, post_path(post)
-                          %span.sidebar-comment-count= link_to post.title, post_path(post, :anchor => 'disqus_thread'), :"data-disqus-identifier" => post.id
+                          %span.sidebar-comment-count= link_to 'Comments', post_path(post, :anchor => 'disqus_thread'), :"data-disqus-identifier" => post.id
                   .widget
                     #recentcomments.dsq-widget
                       %h2.dsq-widget-title= t 'sidebar.title.recent_comments'
