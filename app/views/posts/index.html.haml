@@ -1,6 +1,8 @@
 - for post in @posts
   .post
-    %h2.title= link_to post.title, post
+    %h2.title
+      = link_to post.title, post
+      %small= link_to post.title, post_path(post, :anchor => 'disqus_thread'), :"data-disqus-identifier" => post.id
     %p.meta-info= t('post.meta_info', :author => post.user.username, :date => l(post.created_at, :format => :long))
     %p= raw (truncate(post.markdown_body, :length => 600, :separator => ' '))
     %a{:href => post_url(post), :class => 'readmore'}

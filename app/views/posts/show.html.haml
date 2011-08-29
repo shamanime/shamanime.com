@@ -1,7 +1,6 @@
 - content_for :headjs do
   :javascript
     var disqus_identifier = '#{@post.id}';
-    var disqus_developer = 1; // uncomment this in development
   
 .post
   %h1.title= link_to @post.title, @post
@@ -9,4 +8,17 @@
   %p.meta-info= t('post.meta_info', :author => @post.user.username, :date => l(@post.created_at, :format => :long))
 #comment-wrap
   #disqus_thread
-  = render :partial => 'discus_info'
+  :javascript
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  
+  %noscript
+    Please enable JavaScript to view the
+    %a{:href => "http://disqus.com/?ref_noscript"} comments powered by Disqus.
+  %a.dsq-brlink{:href => "http://disqus.com"}
+    blog comments powered by
+    %span.logo-disqus Disqus

@@ -2,6 +2,11 @@
 %html
   = render :partial => 'layouts/head'
   %body
+    :javascript
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'example'; // required: replace example with your forum shortname
+      // var disqus_developer = 1; // uncomment this in development
+    
     = yield :headjs
     = render :partial => 'layouts/top_bar'
     #top
@@ -23,7 +28,9 @@
                     %h4.widgettitle= t 'sidebar.title.recent_posts'
                     - for post in @recent_posts
                       %ul
-                        %li= link_to post.title, post_path(post)
+                        %li
+                          = link_to post.title, post_path(post)
+                          %span.sidebar-comment-count= link_to post.title, post_path(post, :anchor => 'disqus_thread'), :"data-disqus-identifier" => post.id
                   .widget
                     #recentcomments.dsq-widget
                       %h2.dsq-widget-title= t 'sidebar.title.recent_comments'
@@ -57,4 +64,5 @@
 
     = render :partial => 'layouts/footer_bottom'
     = render :partial => 'layouts/google_analytics'
+    = render :partial => 'layouts/disqus_comment_count'
     = yield :viewjs

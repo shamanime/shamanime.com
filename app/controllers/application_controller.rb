@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
   
   def load_recent_posts
-    @recent_posts = Post.published.desc(:created_at).limit(5)
+    @recent_posts = Post.published.desc(:created_at).limit(10)
   end
 end
