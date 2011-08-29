@@ -6,6 +6,6 @@ class Site < ActionMailer::Base
    @params = params
    mail :from => @params[:email],
         :to => "jefferson@shamanime.com",
-        :subject => "Contact from shamanime.com"
+        :subject => "Contact mail sent from shamanime.com"
  end
 end

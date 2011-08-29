@@ -6,7 +6,7 @@ ShamanimeCom::Application.routes.draw do
     resources :posts, :except => :show
     root :to => 'posts#index'
   end
-  post "/contact", :controller => :pages, :action => :send_contact
+  post "/contact", :controller => :contact, :action => :contact
   get "/contact", :controller => :pages, :action => :contact
   resources :posts, :only => [:index, :show]
   root :to => 'posts#index'

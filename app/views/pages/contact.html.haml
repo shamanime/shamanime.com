@@ -1,10 +1,37 @@
 - content_for :viewjs do
   :javascript
     $(document).ready(function() {
-      $("#submit-button").click(function() {
-        $('#note-error, #note-ok').empty();
-        $('#new_contact').fadeOut();
-        $('#load').append("<img src='#{asset_path 'ajax-loader.gif'}' alt='Loading...' id='loading'>").fadeIn();
+      var validator = $("#new_contact").validate({
+        errorClass: "help-inline",
+        errorElement: "span",
+        rules: {
+          "contact[name]":  {
+                              required: true,
+                              minlength: 4
+                            },
+          "contact[email]": {
+                              required: true,
+                              email: true
+                            },
+          "contact[message]": {
+                                required: true,
+                                minlength: 20
+                              }
+        },
+        highlight: function(element, errorClass, validClass) {
+           $(element).addClass(errorClass).removeClass(validClass);
+           $(element).parents('div.clearfix:first').addClass('error');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+           $(element).removeClass(errorClass).addClass(validClass);
+           $(element).parents('div.clearfix:first').removeClass('error');
+        },
+        submitHandler: function(form) {
+          $('#note-error, #note-ok').empty();
+          $('#new_contact').fadeOut();
+          $('#load').append("<img src='#{asset_path 'ajax-loader.gif'}' alt='Loading...' id='loading'>").fadeIn();
+          $(form).ajaxSubmit();
+        }
       });
     });
   
@@ -13,7 +40,7 @@
   #note-ok{:style => "display:none"}
   #note-error{:style => "display:none"}
   #contact-form
-    = form_for @contact, :url => { :controller => :pages, :action => :send_contact }, :remote => true do |f|
+    = form_for @contact, :url => { :controller => :contact, :action => :contact }, :remote => true, :html => { :class => "form-stacked" } do |f|
       .clearfix
         = f.label :name
         .input= f.text_field :name, :class => "xlarge"
