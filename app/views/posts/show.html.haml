@@ -1,0 +1,12 @@
+- content_for :headjs do
+  :javascript
+    var disqus_identifier = '#{@post.id}';
+    // var disqus_developer = 1; // uncomment this in development
+  
+.post
+  %h1.title= link_to @post.title, @post
+  %p= raw @post.markdown_body
+  %p.meta-info= "Posted by #{@post.user.username} in #{l @post.created_at, :format => :long}."
+#comment-wrap
+  #disqus_thread
+  = render :partial => 'discus_info'

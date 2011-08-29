@@ -1,0 +1,29 @@
+= form_for [:admin, @user] do |f|
+  -if @user.errors.any?
+    .alert-message.block-message.error
+      %p
+        %strong= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %p
+        %ol
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+  %fieldset
+    %legend= @title
+    .clearfix
+      = f.label :username
+      .input= f.text_field :username, :class => "medium"
+    .clearfix
+      = f.label :name
+      .input= f.text_field :name, :class => "xlarge"
+    .clearfix
+      = f.label :email
+      .input= f.text_field :email, :class => "xlarge"
+    .clearfix
+      = f.label :password
+      .input= f.text_field :password, :class => "medium"
+    .clearfix
+      = f.label :pass_confirmation
+      .input= f.text_field :password_confirmation, :class => "medium"
+    .actions
+      = f.submit :class => 'btn primary'
+      = link_to 'Cancel', admin_users_path, :class => 'btn'

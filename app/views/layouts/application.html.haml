@@ -1,0 +1,59 @@
+!!!
+%html
+  = render :partial => 'layouts/head'
+  %body
+    = yield :headjs
+    = render :partial => 'layouts/top_bar'
+    #top
+      #top-center
+        .container
+          #site-name
+            %h1.site-title= t 'blog.name'
+            %p.description= t 'blog.title'
+    #main-area
+      #main-top-shadow
+        .container
+          #content-area.area-with-divider
+            #content-top.top-with-divider
+              .row
+                .span11.columns
+                  = yield
+                .span5.columns
+                  .widget
+                    %h4.widgettitle Recent Posts
+                    - for post in @recent_posts
+                      %ul
+                        %li= link_to post.title, post_path(post)
+                  .widget
+                    #recentcomments.dsq-widget
+                      %h2.dsq-widget-title Recent Comments
+                      %script{:src => "http://shamanime.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200", :type => "text/javascript"}
+    #footer
+      #footer-content
+        #footer-top
+          .container
+            .row
+              .span6.columns.footer-widget
+                %h4.footertitle= t('footer.boxes.first.title')
+                .thumb
+                  = image_tag "profile_min.png", :title => "Jefferson Queiroz Venerando", :class => "item-image"
+                  %span.overlay
+                %p= t('footer.boxes.first.content')
+              .span5.columns.footer-widget
+                %h4.footertitle= t('footer.boxes.second.title')
+                %p= t('footer.boxes.second.content')
+                %ul
+                  %li= link_to "NoSQL e MongoDB", "http://www.slideshare.net/shamanime/nosql-e-mongodb", :target => "_blank"
+                  %li= link_to "Rest pra minha namorada", "http://www.slideshare.net/shamanime/rest-pra-minha-namorada", :target => "_blank"
+              .span5.columns.footer-widget
+                %h4.footertitle= t('footer.boxes.third.title')
+                %p= t('footer.boxes.third.content')
+                %ul.social-contact
+                  %li.skype shamanime
+                  %li.twitter= link_to "@shamanime", "http://www.twitter.com/shamanime", :target => "_blank"
+                  %li.facebook= link_to "shamanime", "http://www.facebook.com/shamanime", :target => "_blank"
+                  %li.slideshare= link_to "shamanime", "http://www.slideshare.net/shamanime", :target => "_blank"
+                  %li.orkut= link_to "./jefferson \"shaman\" queiroz", "http://www.orkut.com.br/Main#Profile?uid=2029458311589917449", :target => "_blank"
+
+    = render :partial => 'layouts/footer_bottom'
+    = yield :viewjs

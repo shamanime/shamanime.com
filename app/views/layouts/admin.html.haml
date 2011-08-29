@@ -1,0 +1,28 @@
+!!!
+%html
+  = render :partial => 'layouts/head'
+  %body
+    = render :partial => 'layouts/top_bar'
+    #top
+      #top-center
+        .container
+          #site-name
+            %h1.site-title= t 'blog.name'
+            %p.description= t 'blog.title'
+    #main-area
+      #main-top-shadow
+        .container
+          #content-area
+            #content-top
+              .row
+                .span16.columns
+                  - if flash
+                    - flash.each do |name, msg| 
+                      .alert-message{:class => name}
+                        = link_to "×", "#", :class => "close"
+                        %p
+                          %strong Hey!
+                          = msg
+                  = yield
+    = render :partial => 'layouts/footer_bottom'
+    = yield :viewjs
