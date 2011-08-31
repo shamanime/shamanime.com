@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ShamanimeCom::Application.config.secret_token = '56f261edca4f482de247fcf65d45285f59927362fd7de357c3893adce94056b3a5eca3b887a4f1a224038a9d3d2a4e4bba0737f4d6e40916c349ba3b928dde9a'
+ShamanimeCom::Application.config.secret_token = '861814e4dab02dd074456e7603b93d800b4698e29074b8f22650ad89404e7063a3e68c6d1109988a20b00f6f281d7ae71524000452bcc07c2d782e9219bb2b4a'

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc6'
+gem "rails", "~> 3.1.0"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -8,20 +8,20 @@ gem 'rails', '3.1.0.rc6'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0.rc"
-  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 
 gem 'jquery-rails'
-gem 'bson_ext', ">= 1.3.1"
-gem 'mongoid', '>= 2.2.0'
+gem "mongoid", "~> 2.2"
+gem "bson_ext", "~> 1.3"
 gem 'devise', ">= 1.4.2"
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'mongoid_slug'
 gem 'rdiscount'
-gem 'will_paginate', '2.3.16'
+gem "kaminari", "~> 0.12.4"
 
 # Use unicorn as the web server
 # gem 'unicorn'

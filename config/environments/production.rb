@@ -14,6 +14,15 @@ ShamanimeCom::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
+  # Generate digests for assets URLs
+  config.assets.digest = true
+
+  # Defaults to Rails.root.join("public/assets")
+  # config.assets.manifest = YOUR_PATH
+
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
@@ -37,7 +46,8 @@ ShamanimeCom::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
+  ActionMailer::Base.delivery_method = :sendmail
 
   # Enable threaded mode
   # config.threadsafe!
@@ -45,10 +55,7 @@ ShamanimeCom::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
-  
-  config.action_mailer.raise_delivery_errors = false
-  ActionMailer::Base.delivery_method = :sendmail
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
+  config.active_support.deprecation = :notify  
 end

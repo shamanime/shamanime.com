@@ -21,6 +21,12 @@ ShamanimeCom::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # Do not compress assets
+  config.assets.compress = false
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
   
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {  
@@ -32,7 +38,4 @@ ShamanimeCom::Application.configure do
     :authentication       => "plain",  
     :enable_starttls_auto => true  
   }
-
-  # Do not compress assets
-  config.assets.compress = false
 end
