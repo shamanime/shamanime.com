@@ -12,6 +12,4 @@
   .post
     %p= t ('post.no_posts')
 .row
-  .pagination
-    %ul
-      = will_paginate @posts, :container => false
+  = paginate @posts
